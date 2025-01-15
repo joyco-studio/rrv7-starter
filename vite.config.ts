@@ -4,6 +4,7 @@ import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import babel from 'vite-plugin-babel';
+import bundleAnalyzer from 'vite-bundle-analyzer';
 
 const ReactCompilerConfig = {};
 
@@ -11,8 +12,8 @@ export default defineConfig(({ isSsrBuild, command }) => ({
   build: {
     rollupOptions: isSsrBuild
       ? {
-          input: './server/app.ts',
-        }
+        input: './server/app.ts',
+      }
       : undefined,
   },
   css: {
@@ -33,5 +34,6 @@ export default defineConfig(({ isSsrBuild, command }) => ({
       },
     }),
     tsconfigPaths(),
+    ...(process.env.ANALYZE === 'true' ? [bundleAnalyzer({ analyzerMode: 'static', openAnalyzer: false, reportTitle: "Client Bundle Analyzer" })] : []),
   ],
 }));
