@@ -9,6 +9,9 @@ import bundleAnalyzer from 'vite-bundle-analyzer'
 const ReactCompilerConfig = {}
 
 export default defineConfig(({ isSsrBuild, command }) => ({
+  server: {
+    port: 3000,
+  },
   build: {
     rollupOptions: isSsrBuild
       ? {
