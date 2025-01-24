@@ -25,7 +25,8 @@ export default defineConfig(({ isSsrBuild, command }) => ({
     },
   },
   ssr: {
-    noExternal: command === 'build' ? true : undefined,
+    // add here libraries such as basehub, tempus, lenis
+    noExternal: command === 'build' ? true : ['gsap'],
   },
   plugins: [
     reactRouter(),

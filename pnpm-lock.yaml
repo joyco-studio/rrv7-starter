@@ -14,6 +14,9 @@ dependencies:
   '@vercel/node':
     specifier: ^3.2.25
     version: 3.2.29
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
   express:
     specifier: ^4.21.1
     version: 4.21.2
@@ -23,12 +26,18 @@ dependencies:
   react:
     specifier: ^19.0.0
     version: 19.0.0
+  react-device-detect:
+    specifier: ^2.2.3
+    version: 2.2.3(react-dom@19.0.0)(react@19.0.0)
   react-dom:
     specifier: ^19.0.0
     version: 19.0.0(react@19.0.0)
   react-router:
     specifier: ^7.1.1
     version: 7.1.1(react-dom@19.0.0)(react@19.0.0)
+  tailwind-merge:
+    specifier: ^2.6.0
+    version: 2.6.0
 
 devDependencies:
   '@eslint/js':
@@ -1882,6 +1891,11 @@ packages:
 
   /cjs-module-lexer@1.2.3:
     resolution: {integrity: sha512-0TNiGstbQmCFwt4akjjBg5pLRTSyj/PkWQ1ZoO2zntmg9yLqSRxwEa4iCfQLGjqhiqBfOJa7W/E8wfGrTDmlZQ==}
+    dev: false
+
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
     dev: false
 
   /code-block-writer@10.1.1:
@@ -4196,6 +4210,17 @@ packages:
       unpipe: 1.0.0
     dev: false
 
+  /react-device-detect@2.2.3(react-dom@19.0.0)(react@19.0.0):
+    resolution: {integrity: sha512-buYY3qrCnQVlIFHrC5UcUoAj7iANs/+srdkwsnNjI7anr3Tt7UY6MqNxtMLlr0tMBied0O49UZVK8XKs3ZIiPw==}
+    peerDependencies:
+      react: '>= 0.14.0'
+      react-dom: '>= 0.14.0'
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      ua-parser-js: 1.0.40
+    dev: false
+
   /react-dom@19.0.0(react@19.0.0):
     resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
     peerDependencies:
@@ -4761,6 +4786,10 @@ packages:
       tslib: 2.8.1
     dev: true
 
+  /tailwind-merge@2.6.0:
+    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
+    dev: false
+
   /tailwindcss@3.4.17:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
     engines: {node: '>=14.0.0'}
@@ -5007,6 +5036,11 @@ packages:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  /ua-parser-js@1.0.40:
+    resolution: {integrity: sha512-z6PJ8Lml+v3ichVojCiB8toQJBuwR42ySM4ezjXIqXK3M0HczmKQ3LF4rhU55PfD99KEEXQG6yb7iOMyvYuHew==}
+    hasBin: true
+    dev: false
 
   /unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
