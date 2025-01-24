@@ -1,8 +1,11 @@
-import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
+import { isRouteErrorResponse, Links, Meta, Scripts, ScrollRestoration, useLocation, useOutlet } from 'react-router'
 
 import type { Route } from './+types/root'
 import stylesheet from './app.css?url'
-
+import { RouteTransitionManager } from '@joycostudio/transitions'
+import routes from './routes'
+import { promisifyGsap } from './lib/gsap'
+import gsap from 'gsap'
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
@@ -36,7 +39,48 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />
+  const element = useOutlet()
+
+  const location = useLocation()
+
+  return (
+    <RouteTransitionManager
+      appear
+      routes={routes} /* If nothing matches create a dummy ref, so 404 kicks in */
+      pathname={location.pathname}
+      onEntering={{
+        default: () => {
+          window.scrollTo({ top: 0 })
+          // useLenis.getState().scrollTo(0, { immediate: true, programmatic: true });
+          // scroll.unlock();
+        },
+      }}
+      onEnter={{
+        default: (node) => {
+          return promisifyGsap(
+            gsap
+              .timeline({
+                onComplete: () => {
+                  gsap.set(node, { clearProps: 'all' })
+                },
+              })
+              .fromTo(node, { opacity: 0 }, { opacity: 1, duration: 1 })
+          )
+        },
+      }}
+      onExit={{
+        default: (node) => {
+          return promisifyGsap(gsap.timeline().fromTo(node, { opacity: 1 }, { opacity: 0, duration: 0.5 }, 0))
+        },
+      }}
+    >
+      {(ref) => (
+        <main className="overflow-y-clip flex flex-col min-h-svh" data-pathname={location.pathname} ref={ref}>
+          {element}
+        </main>
+      )}
+    </RouteTransitionManager>
+  )
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

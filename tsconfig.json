@@ -12,9 +12,9 @@
     "paths": {
       "@/*": ["./app/*"],
       "@/components/*": ["./app/components/*"],
-      "@/utils/*": ["./app/utils/*"],
       "@/lib/*": ["./app/lib/*"],
-      "@/hooks/*": ["./app/hooks/*"]
+      "@/hooks/*": ["./app/hooks/*"],
+      "@/utils/*": ["app/lib/utils/*"]
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
