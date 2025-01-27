@@ -12,7 +12,7 @@ import {
 
 import type { Route } from './+types/root'
 import stylesheet from './app.css?url'
-import { RouteTransitionManager, usePreservedLoaderData } from '@joycostudio/transitions'
+import { RouteTransitionManager } from '@joycostudio/transitions'
 import routes from './routes'
 import { promisifyGsap } from './lib/gsap'
 import gsap from 'gsap'
@@ -32,14 +32,21 @@ export const links: Route.LinksFunction = () => [
     crossOrigin: 'anonymous',
   },
   {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+    rel: 'preload',
+    href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap',
+    type: 'text/css',
+    as: 'style',
+    crossOrigin: 'anonymous',
   },
   { rel: 'stylesheet', href: stylesheet },
 ]
 
 export const loader = () => {
-  return { rebelLog: WATERMARK }
+  const mediaLinks = [
+    { label: 'x', link: 'https://x.com/joyco_studio' },
+    { label: 'github', link: 'https://github.com/joyco-studio/rrv7-starter' },
+  ]
+  return { rebelLog: WATERMARK, mediaLinks }
 }
 
 export const meta: MetaFunction<typeof loader> = () => {
@@ -58,8 +65,6 @@ export const meta: MetaFunction<typeof loader> = () => {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { rebelLog } = usePreservedLoaderData<typeof loader>()
-
   return (
     <html lang="en">
       <head>
@@ -71,7 +76,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         {children}
-        <Footer log={rebelLog} />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

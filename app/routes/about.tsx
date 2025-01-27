@@ -35,9 +35,9 @@ export default function About() {
   const { message, signature } = usePreservedLoaderData<typeof loader>()
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="text-6xl uppercase font-bold mb-5">What is this?</h1>
+    <div className="flex flex-col items-center h-screen pt-header">
+      <div className="flex flex-col justify-center items-center mt-10 p-4">
+        <h1 className="text-6xl uppercase font-sans font-bold mb-5">What is this?</h1>
         <p className="font-mono opacity-50 text-balance whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose">
           {message}
         </p>

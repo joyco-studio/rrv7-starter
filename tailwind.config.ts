@@ -22,7 +22,7 @@ export default {
         ],
       },
       spacing: {
-        header: '100px',
+        header: 'var(--header-height)',
       },
     },
   },
