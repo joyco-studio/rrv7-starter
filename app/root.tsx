@@ -24,7 +24,6 @@ export const links: Route.LinksFunction = () => [
   { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
   { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
   { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-  { rel: 'manifest', href: '/site.webmanifest' },
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
     rel: 'preconnect',
@@ -38,7 +37,12 @@ export const links: Route.LinksFunction = () => [
     as: 'style',
     crossOrigin: 'anonymous',
   },
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap',
+  },
   { rel: 'stylesheet', href: stylesheet },
+  { rel: 'manifest', href: '/site.webmanifest' },
 ]
 
 export const loader = () => {
