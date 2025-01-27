@@ -14,8 +14,8 @@ export const Header = () => {
         </Link>
         <nav className="flex items-center justify-center md:justify-self-center">
           <ul className="flex items-center gap-3 md:gap-6 font-mono uppercase">
-            {routes.map((route) => (
-              <li key={route.path} className="text-sm">
+            {routes.map((route, index) => (
+              <li key={index} className="text-sm">
                 <Link to={route.path ?? ''}>{route.path?.replace('/', '') ?? 'Home'}</Link>
               </li>
             ))}
@@ -24,8 +24,8 @@ export const Header = () => {
       </div>
 
       <ul className="flex items-center gap-3 md:gap-6 font-mono uppercase md:justify-self-end">
-        {mediaLinks.map((link) => (
-          <li key={link.label} className="text-sm">
+        {mediaLinks.map((link, index) => (
+          <li key={index} className="text-sm">
             <Link className="underline underline-offset-4" to={link.link} target="_blank" rel="noopener noreferrer">
               {link.label}
             </Link>
