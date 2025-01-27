@@ -99,13 +99,11 @@ export default function App() {
   return (
     <RouteTransitionManager
       appear
-      routes={routes} /* If nothing matches create a dummy ref, so 404 kicks in */
+      routes={routes}
       pathname={location.pathname}
       onEntering={{
         default: () => {
           window.scrollTo({ top: 0 })
-          // useLenis.getState().scrollTo(0, { immediate: true, programmatic: true });
-          // scroll.unlock();
         },
       }}
       onEnter={{
