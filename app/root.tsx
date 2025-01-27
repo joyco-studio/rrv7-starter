@@ -128,7 +128,12 @@ export default function App() {
       }}
     >
       {(ref) => (
-        <main className="overflow-y-clip flex flex-col min-h-svh" data-pathname={location.pathname} ref={ref}>
+        <main
+          style={{ opacity: 0 }}
+          className="overflow-y-clip flex flex-col min-h-svh"
+          data-pathname={location.pathname}
+          ref={ref}
+        >
           {element}
         </main>
       )}
