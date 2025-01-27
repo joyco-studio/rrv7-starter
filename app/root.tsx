@@ -32,9 +32,9 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: 'preload',
-    href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap',
-    type: 'text/css',
-    as: 'style',
+    href: 'https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuYMBYro.woff2',
+    as: 'font',
+    type: 'font/woff2',
     crossOrigin: 'anonymous',
   },
   {
