@@ -56,8 +56,6 @@ export const loader = () => {
 export const meta: MetaFunction<typeof loader> = () => {
   const ogImageUrl = `${SITE_URL}/opengraph-image.png`
 
-  console.log(ogImageUrl)
-
   const metaTags: MetaDescriptor[] = [
     {
       title: 'Rebels starter',
