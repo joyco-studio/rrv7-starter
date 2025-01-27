@@ -62,7 +62,8 @@ export const meta: MetaFunction<typeof loader> = () => {
     },
     {
       name: 'description',
-      content: 'A react-router v7 starter made by rebels for rebels.',
+      content:
+        'A react-router v7 starter made by rebels for rebels. Featuring: react-router v7, react 19 + compiler, tailwindcss, gsap, eslint + prettier, page transitions, + 1000 aura.',
     },
     ...generateOpenGraphImageTags(ogImageUrl),
   ]
