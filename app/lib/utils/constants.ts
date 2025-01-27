@@ -2,8 +2,16 @@ export const isServer = typeof window === 'undefined'
 
 export const isClient = typeof window !== 'undefined'
 
-export const isDevelopment = process.env.NODE_ENV === 'development'
+export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 
+const base_url =
+  import.meta.env.VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VERCEL_URL || import.meta.env.VITE_SITE_URL
+
+if (!base_url) {
+  throw new Error('SITE_URL is not set')
+}
+
+export const SITE_URL = new URL(base_url).origin
 export const WATERMARK = `             
              .;5####57..                        
             .5#########;.                       

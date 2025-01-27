@@ -18,7 +18,7 @@ import { promisifyGsap } from './lib/gsap'
 import gsap from 'gsap'
 import { Header } from './components/header'
 import Footer from './components/footer'
-import { WATERMARK } from './lib/utils/constants'
+import { SITE_URL, WATERMARK } from './lib/utils/constants'
 import { generateOpenGraphImageTags } from './lib/utils/meta'
 export const links: Route.LinksFunction = () => [
   { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
@@ -54,6 +54,10 @@ export const loader = () => {
 }
 
 export const meta: MetaFunction<typeof loader> = () => {
+  const ogImageUrl = `${SITE_URL}/opengraph-image.png`
+
+  console.log(ogImageUrl)
+
   const metaTags: MetaDescriptor[] = [
     {
       title: 'Rebels starter',
@@ -62,7 +66,7 @@ export const meta: MetaFunction<typeof loader> = () => {
       name: 'description',
       content: 'A react-router v7 starter made by rebels for rebels.',
     },
-    ...generateOpenGraphImageTags('./opengraph-image.png'),
+    ...generateOpenGraphImageTags(ogImageUrl),
   ]
 
   return metaTags
