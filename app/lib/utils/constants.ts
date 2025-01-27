@@ -1,3 +1,5 @@
+import { prependProtocol } from '../utils'
+
 export const isServer = typeof window === 'undefined'
 
 export const isClient = typeof window !== 'undefined'
@@ -11,7 +13,7 @@ if (!base_url) {
   throw new Error('SITE_URL is not set')
 }
 
-export const SITE_URL = new URL(base_url).origin
+export const SITE_URL = prependProtocol(base_url)
 export const WATERMARK = `             
              .;5####57..                        
             .5#########;.                       
