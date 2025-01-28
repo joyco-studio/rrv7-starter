@@ -1,4 +1,4 @@
-[banner.png](./public/banner.png)
+![banner.png](./public/banner.png)
 
 # <img src="./public/JOYCO.png" alt="JOYCO Logo" height="36" width="36" align="top" />&nbsp;&nbsp;JOYCO RRv7
 
