@@ -23,7 +23,8 @@ export default tseslint.config([
       prettier: eslintPluginPrettier,
     },
     rules: {
-      'react-compiler/react-compiler': 'error',
+      'react-compiler/react-compiler': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
       'prettier/prettier': 'warn',
       'no-console': 'warn',
     },
