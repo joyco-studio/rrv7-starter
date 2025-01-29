@@ -1,4 +1,4 @@
-export const noop = () => {}
+export const noop = () => { }
 
 export const prependProtocol = (url: string) => {
   if (url.startsWith('http://') || url.startsWith('https://')) {
