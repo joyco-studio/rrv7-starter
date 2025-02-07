@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@joycostudio/transitions": "^0.0.6",
+    "@joycostudio/transitions": "^0.0.7",
     "@react-router/express": "^7.1.1",
     "@react-router/node": "^7.1.1",
     "@vercel/node": "^3.2.25",

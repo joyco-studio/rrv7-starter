@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.1.2
     version: 2.1.2(gsap@3.12.5)(react@19.0.0)
   '@joycostudio/transitions':
-    specifier: ^0.0.6
-    version: 0.0.6(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0)
+    specifier: ^0.0.7
+    version: 0.0.7(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0)
   '@react-router/express':
     specifier: ^7.1.1
     version: 7.1.1(express@4.21.2)(react-router@7.1.3)(typescript@5.7.3)
@@ -814,8 +814,8 @@ packages:
       wrap-ansi-cjs: /wrap-ansi@7.0.0
     dev: true
 
-  /@joycostudio/transitions@0.0.6(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0):
-    resolution: {integrity: sha512-6gnhO7dG0skk3lKaqcM3Cnz8e9Kjjcfk9HqT8UzByI/Gcolf8et6V385tskv707gdyL0MV+rPfy3AlNKixlw8w==}
+  /@joycostudio/transitions@0.0.7(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0):
+    resolution: {integrity: sha512-sYtTrLT2r+kI1M4qhAqdcVrXiv5wtYCVt3c33SMn/oqp65aSscG6E1zwjrqxA21yodf83uJhtmD/7fQdXtHbZg==}
     peerDependencies:
       react: '>=16.8.0'
       react-router: '>=7'

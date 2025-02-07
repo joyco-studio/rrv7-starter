@@ -1,6 +1,5 @@
 import { SITE_URL } from '@/lib/utils/constants'
-import { mergeMeta } from '@/lib/utils/meta'
-import { generateOpenGraphImageTags } from '@/lib/utils/meta'
+import { generateMeta, mergeMeta } from '@/lib/utils/meta'
 import { usePreservedLoaderData } from '@joycostudio/transitions'
 import type { MetaFunction } from 'react-router'
 
@@ -23,15 +22,14 @@ Proceed with caution, as using this starter will make you a rebel. Some of the s
 export const meta: MetaFunction<typeof loader> = ({ data, matches }) => {
   const parentMeta = matches.flatMap((match) => match.meta ?? [])
 
-  const ogImageUrl = `${SITE_URL}/about/opengraph-image.png`
-
-  const metaTags = [
-    { title: 'About' },
-    { name: 'description', content: data?.message },
-    ...generateOpenGraphImageTags(ogImageUrl),
-  ]
-
-  return mergeMeta(parentMeta, metaTags)
+  return mergeMeta(
+    parentMeta,
+    generateMeta({
+      title: 'About',
+      description: data?.message ?? '',
+      image: { url: `${SITE_URL}/about/opengraph-image.png`, width: 1200, height: 630, type: 'image/png' },
+    })
+  )
 }
 
 export default function About() {

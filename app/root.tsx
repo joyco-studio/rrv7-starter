@@ -6,7 +6,6 @@ import {
   ScrollRestoration,
   useLocation,
   useOutlet,
-  type MetaDescriptor,
   type MetaFunction,
 } from 'react-router'
 
@@ -19,31 +18,31 @@ import gsap from 'gsap'
 import { Header } from './components/header'
 import Footer from './components/footer'
 import { SITE_URL, WATERMARK } from './lib/utils/constants'
-import { generateOpenGraphImageTags } from './lib/utils/meta'
-export const links: Route.LinksFunction = () => [
-  { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-  { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-  { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-  {
-    rel: 'preconnect',
-    href: 'https://fonts.gstatic.com',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'preload',
-    href: 'https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuYMBYro.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap',
-  },
-  { rel: 'stylesheet', href: stylesheet },
-  { rel: 'manifest', href: '/site.webmanifest' },
-]
+import { generateMeta } from './lib/utils/meta'
+import { generateLinks } from './lib/utils/links'
+
+export const links: Route.LinksFunction = () =>
+  generateLinks({
+    stylesheets: [stylesheet, 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap'],
+    favicon: {
+      '32x32': '/favicon-32x32.png',
+      '16x16': '/favicon-16x16.png',
+      'apple-touch-icon': '/apple-touch-icon.png',
+    },
+    manifest: '/site.webmanifest',
+    preconnect: [
+      { href: 'https://fonts.googleapis.com' },
+      { href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+    ],
+    preload: [
+      {
+        href: 'https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuYMBYro.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossOrigin: 'anonymous',
+      },
+    ],
+  })
 
 export const loader = () => {
   const mediaLinks = [
@@ -54,21 +53,17 @@ export const loader = () => {
 }
 
 export const meta: MetaFunction<typeof loader> = () => {
-  const ogImageUrl = `${SITE_URL}/opengraph-image.png`
+  const meta = generateMeta({
+    strict: true,
+    title: 'Rebels starter',
+    description:
+      'A react-router v7 starter made by rebels for rebels. Featuring: react-router v7, react 19 + compiler, tailwindcss, gsap, eslint + prettier, page transitions, + 1000 aura.',
+    url: SITE_URL,
+    siteName: 'Rebels starter',
+    image: { url: `${SITE_URL}/opengraph-image.png`, width: 1200, height: 630, type: 'image/png' },
+  })
 
-  const metaTags: MetaDescriptor[] = [
-    {
-      title: 'Rebels starter',
-    },
-    {
-      name: 'description',
-      content:
-        'A react-router v7 starter made by rebels for rebels. Featuring: react-router v7, react 19 + compiler, tailwindcss, gsap, eslint + prettier, page transitions, + 1000 aura.',
-    },
-    ...generateOpenGraphImageTags(ogImageUrl),
-  ]
-
-  return metaTags
+  return meta
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
