@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.1.2
     version: 2.1.2(gsap@3.12.5)(react@19.0.0)
   '@joycostudio/transitions':
-    specifier: ^0.0.4
-    version: 0.0.4(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0)
+    specifier: ^0.0.6
+    version: 0.0.6(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0)
   '@react-router/express':
     specifier: ^7.1.1
     version: 7.1.1(express@4.21.2)(react-router@7.1.3)(typescript@5.7.3)
@@ -814,12 +814,13 @@ packages:
       wrap-ansi-cjs: /wrap-ansi@7.0.0
     dev: true
 
-  /@joycostudio/transitions@0.0.4(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0):
-    resolution: {integrity: sha512-OeYJksR8y3rLhWYR5K7xjk0zenxiW4MUXX5POfP71ZvAgfbIRTyc3w5Wv2TaxzSC5n4abfsr+0gIg+2xVmsyYw==}
+  /@joycostudio/transitions@0.0.6(react-dom@19.0.0)(react-router@7.1.3)(react@19.0.0):
+    resolution: {integrity: sha512-6gnhO7dG0skk3lKaqcM3Cnz8e9Kjjcfk9HqT8UzByI/Gcolf8et6V385tskv707gdyL0MV+rPfy3AlNKixlw8w==}
     peerDependencies:
       react: '>=16.8.0'
-      react-router: '>=7.1.3'
+      react-router: '>=7'
     dependencies:
+      nanoid: 5.0.9
       react: 19.0.0
       react-router: 7.1.3(react-dom@19.0.0)(react@19.0.0)
       react-transition-group: 4.4.5(react-dom@19.0.0)(react@19.0.0)
@@ -3757,6 +3758,12 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanoid@5.0.9:
+    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
