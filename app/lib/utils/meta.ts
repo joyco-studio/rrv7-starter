@@ -18,7 +18,7 @@ type MetaConfigBase = {
   description: string
   url: string
   siteName: string
-  image?: MetaImage
+  image: MetaImage
   twitter?: {
     card?: 'summary' | 'summary_large_image'
     title?: string
