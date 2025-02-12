@@ -4,17 +4,16 @@ import { usePreservedLoaderData } from '@joycostudio/transitions'
 import type { MetaFunction } from 'react-router'
 
 export function loader() {
-  const messageCopy = `As using this starter will make you a rebel. Some of the symptoms include:
+  const messageCopy = `Read carefully before proceeding. Using this starter will make you a rebel. Possible symptoms may include:
 
-  - Start to see the world in a different way.
-  - Being uncontrollable funny and charming.
-  - Tons of webgl skills coming out of nowhere.
+  - Can't stop coding.
   - Getting +1000 aura points.
-  - Loosing -1000 aura points.
+  - Being unable to follow the rules.
+  - Extreme dedication to detail.
+  - Loosing -1000 aura points
   `
-  const signature = `
-  Made by rebels.
-  `
+  const signature = `Made by rebels.`
+
   return { message: messageCopy, signature }
 }
 
@@ -36,9 +35,9 @@ export default function About() {
 
   return (
     <div className="flex flex-col items-center h-screen pt-header">
-      <div className="flex flex-col justify-center items-center mt-10 p-4">
-        <h1 className="text-6xl uppercase font-sans font-bold mb-5">What is this?</h1>
-        <p className="font-mono opacity-50 text-balance whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose">
+      <div className="flex flex-col justify-center items-center mt-10 max-w-2xl p-4">
+        <h1 className="text-6xl uppercase font-sans font-bold mb-5">Side Effects</h1>
+        <p className="font-mono opacity-50 text-pretty whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose">
           {message}
         </p>
         <p className="ml-auto font-mono opacity-50 text-end whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase">
