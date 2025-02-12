@@ -4,8 +4,7 @@ import { usePreservedLoaderData } from '@joycostudio/transitions'
 import type { MetaFunction } from 'react-router'
 
 export function loader() {
-  const messageCopy = `
-Proceed with caution, as using this starter will make you a rebel. Some of the symptoms include:
+  const messageCopy = `As using this starter will make you a rebel. Some of the symptoms include:
 
   - Start to see the world in a different way.
   - Being uncontrollable funny and charming.
