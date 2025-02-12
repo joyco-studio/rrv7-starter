@@ -11,3 +11,4 @@ The JOYCO `React Router v7` + `React 19` + `React Compiler` ready template 🔥
 | 🤓 Preconfigured Eslint + Prettier |
 | 🪄 Page transitions |
 | 🦸‍♂️ GSAP Setup |
+| 🖌️ Tailwind setup |
