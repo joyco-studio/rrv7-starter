@@ -77,6 +77,7 @@ export default function Home() {
         <Paragraph className="mt-8 mb-2">OK, PROCEED</Paragraph>
         <a
           className="border-2 border-primary bg-primary flex items-center h-12"
+          target="_blank"
           href="https://github.com/new?owner=joyco-studio&template_name=rrv7-starter&template_owner=joyco-studio"
         >
           <div className="flex items-center justify-center h-full aspect-square">
