@@ -24,6 +24,15 @@ export default {
       spacing: {
         header: 'var(--header-height)',
       },
+      keyframes: {
+        'move-stripes': {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '-80px 0' },
+        },
+      },
+      animation: {
+        'move-stripes': 'move-stripes 2s linear infinite',
+      },
     },
   },
   plugins: [],
