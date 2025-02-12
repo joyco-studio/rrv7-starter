@@ -40,7 +40,7 @@ const Paragraph = ({ children, className }: { children: React.ReactNode; classNa
   return (
     <p
       className={cn(
-        'text-center font-mono opacity-50 text-pretty whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose',
+        'text-center font-mono text-primary text-opacity-50 text-pretty whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose',
         className
       )}
     >
@@ -53,7 +53,7 @@ export default function Home() {
   const { stack } = usePreservedLoaderData<typeof loader>()
 
   return (
-    <div className="flex flex-col items-center pt-header h-screen bg-accent">
+    <div className="flex selection:bg-primary selection:text-accent flex-col items-center pt-header h-screen bg-accent">
       <div className="flex flex-col justify-center items-center mt-10 p-4">
         <h1 className="font-sans text-6xl font-bold mb-7">RRv7 STARTER</h1>
         <Paragraph>

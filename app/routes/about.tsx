@@ -1,3 +1,4 @@
+import cn from '@/lib/utils/cn'
 import { SITE_URL } from '@/lib/utils/constants'
 import { generateMeta, mergeMeta } from '@/lib/utils/meta'
 import { usePreservedLoaderData } from '@joycostudio/transitions'
@@ -30,19 +31,28 @@ export const meta: MetaFunction<typeof loader> = ({ data, matches }) => {
   )
 }
 
+const Paragraph = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return (
+    <p
+      className={cn(
+        'font-mono text-primary text-opacity-50 text-pretty whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose',
+        className
+      )}
+    >
+      {children}
+    </p>
+  )
+}
+
 export default function About() {
   const { message, signature } = usePreservedLoaderData<typeof loader>()
 
   return (
-    <div className="flex flex-col items-center h-screen pt-header">
+    <div className="selection:bg-primary selection:text-background flex flex-col items-center h-screen pt-header">
       <div className="flex flex-col justify-center items-center mt-10 max-w-2xl p-4">
         <h1 className="text-6xl uppercase font-sans font-bold mb-5">Side Effects</h1>
-        <p className="font-mono opacity-50 text-pretty whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase mt-2 max-w-prose">
-          {message}
-        </p>
-        <p className="ml-auto font-mono opacity-50 text-end whitespace-pre-wrap text-xs leading-relaxed font-medium uppercase">
-          {signature}
-        </p>
+        <Paragraph>{message}</Paragraph>
+        <Paragraph className="ml-auto">{signature}</Paragraph>
       </div>
     </div>
   )
