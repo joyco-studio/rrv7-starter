@@ -13,3 +13,4 @@ The JOYCO `React Router v7` + `React 19` + `React Compiler` ready template to po
 - 🦸‍♂️ GSAP Setup
 - 🖌️ Tailwind Setup
 - ▲ Vercel Compatible
+- 🔎 Bundle Analyzer
