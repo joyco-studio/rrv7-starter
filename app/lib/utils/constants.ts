@@ -2,8 +2,10 @@ import { prependProtocol } from '../utils'
 import { getEnvWithDefaults } from './env'
 
 export const isServer = typeof window === 'undefined'
+export const isClient = typeof window !== 'undefined'
 
 const env = getEnvWithDefaults()
+
 const base_url = env.VITE_VERCEL_PROJECT_PRODUCTION_URL || env.VITE_VERCEL_URL || env.VITE_SITE_URL
 
 if (!base_url) {
