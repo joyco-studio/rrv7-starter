@@ -1,16 +1,15 @@
 import { prependProtocol } from '../utils'
+import { getEnvWithDefaults } from './env'
 
 export const isServer = typeof window === 'undefined'
 
-export const isClient = typeof window !== 'undefined'
-
-export const isDevelopment = import.meta.env.NODE_ENV === 'development'
-
-const base_url =
-  import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VITE_VERCEL_URL || import.meta.env.VITE_SITE_URL
+const env = getEnvWithDefaults()
+const base_url = env.VITE_VERCEL_PROJECT_PRODUCTION_URL || env.VITE_VERCEL_URL || env.VITE_SITE_URL
 
 if (!base_url) {
-  throw new Error('SITE_URL is not set')
+  throw new Error(
+    'VITE_SITE_URL is not set. This environment variable is required for the frontend to function properly.'
+  )
 }
 
 export const SITE_URL = prependProtocol(base_url)
