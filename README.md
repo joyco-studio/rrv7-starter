@@ -14,3 +14,7 @@ The JOYCO `React Router v7` + `React 19` + `React Compiler` ready template to po
 - 🖌️ Tailwind Setup
 - ▲ Vercel Compatible
 - 🔎 Bundle Analyzer
+
+## Handy utils
+- /lib/meta
+- /lib/links
