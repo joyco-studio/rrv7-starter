@@ -55,11 +55,11 @@ export const loader = () => {
 export const meta: MetaFunction<typeof loader> = () => {
   const meta = generateMeta({
     strict: true,
-    title: 'Rebels starter',
+    title: 'Rebels Starter',
     description:
       'A react-router v7 starter made by rebels for rebels. Featuring: react-router v7, react 19 + compiler, tailwindcss, gsap, eslint + prettier, page transitions, + 1000 aura.',
     url: SITE_URL,
-    siteName: 'Rebels starter',
+    siteName: 'Rebels Starter',
     image: { url: `${SITE_URL}/opengraph-image.png`, width: 1200, height: 630, type: 'image/png' },
   })
 
