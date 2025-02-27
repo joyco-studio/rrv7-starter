@@ -16,5 +16,5 @@ The JOYCO `React Router v7` + `React 19` + `React Compiler` ready template to po
 - 🔎 Bundle Analyzer
 
 ## Handy utils
-- `generateMeta()` at `/app/lib/meta`. Generates meta tags through a type safe interface with great defaults.
-- `generateLinks()` at `/app/lib/links`. Same as above but for link tags, optimized for fonts, prefetching and essential page data.
+- `generateMeta()` at `/app/lib/meta` | Generates meta tags through a type safe interface with great defaults.
+- `generateLinks()` at `/app/lib/links` | Same as above but for link tags, optimized for fonts, prefetching and essential page data.
