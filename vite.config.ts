@@ -6,18 +6,9 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import babel from 'vite-plugin-babel'
 import bundleAnalyzer from 'vite-bundle-analyzer'
 
-const ReactCompilerConfig = {}
-
-export default defineConfig(({ isSsrBuild, command }) => ({
+export default defineConfig(({ command }) => ({
   server: {
     port: 3000,
-  },
-  build: {
-    rollupOptions: isSsrBuild
-      ? {
-          input: './server/app.ts',
-        }
-      : undefined,
   },
   css: {
     postcss: {
@@ -25,7 +16,13 @@ export default defineConfig(({ isSsrBuild, command }) => ({
     },
   },
   ssr: {
-    // add here libraries such as basehub, tempus, lenis
+    /* 
+      - On prod build, we want to bundle all libraries.
+      - On dev build, libraries are externalized to speed up the build. But some of them might need
+        to be transpiled for module compatibility on the server, so include them in the dev bundle.
+
+      https://vite.dev/config/ssr-options#ssr-noexternal
+    */
     noExternal: command === 'build' ? true : ['gsap'],
   },
   plugins: [
@@ -33,8 +30,8 @@ export default defineConfig(({ isSsrBuild, command }) => ({
     babel({
       filter: /\.[jt]sx?$/,
       babelConfig: {
-        presets: ['@babel/preset-typescript'], // if you use TypeScript
-        plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]],
+        presets: ['@babel/preset-typescript'],
+        plugins: ['babel-plugin-react-compiler'],
       },
     }),
     tsconfigPaths(),

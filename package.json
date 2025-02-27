@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build && node vercel/prepare.js",
-    "dev": "cross-env NODE_ENV=development node ./dev-server.js",
+    "build": "react-router build",
+    "dev": "react-router dev",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint -c ./eslint.config.mjs . --fix --no-cache",
     "build:analyze": "cross-env ANALYZE=true npm run build && node ./.scripts/open-analyze.cjs"
