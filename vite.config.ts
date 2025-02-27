@@ -16,10 +16,10 @@ export default defineConfig(({ command }) => ({
     },
   },
   define: {
-    'import.meta.env': {
+    'import.meta.env': JSON.stringify({
       VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
       VERCEL_URL: process.env.VERCEL_URL,
-    },
+    }),
   },
   ssr: {
     /* 
