@@ -9,7 +9,7 @@ export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 export const SITE_URL = prependProtocol(__vercel.url || import.meta.env.VITE_SITE_URL)
 
 if (!SITE_URL) {
-  throw new Error('VITE_SITE_URL is not set')
+  console.error('VITE_SITE_URL is not set! This could break stuff like opengraph data.')
 }
 
 export const WATERMARK = `             
