@@ -8,11 +8,12 @@ export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 
 if (isClient) {
   console.log('import.meta.env', import.meta.env)
-  console.log('process.env', process.env)
+  console.log('import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL', import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL)
+  console.log('import.meta.env.VITE_VERCEL_URL', import.meta.env.VITE_VERCEL_URL)
 }
 
 export const SITE_URL = prependProtocol(
-  import.meta.env.VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VERCEL_URL || import.meta.env.VITE_SITE_URL
+  import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VITE_VERCEL_URL || import.meta.env.VITE_SITE_URL
 )
 
 if (!SITE_URL) {
