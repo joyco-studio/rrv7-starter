@@ -19,6 +19,8 @@ export default defineConfig(({ command }) => ({
     /*
       Vercel env variables are only available on the server and at build time,
       so we need to define them here to make them available on the client.
+
+      https://vite.dev/config/shared-options.html#define
     */
     __vercel: JSON.stringify({
       /* On prod, use the project production url, on dev, use the deployment url */
