@@ -15,6 +15,11 @@ export default defineConfig(({ command }) => ({
       plugins: [tailwindcss, autoprefixer],
     },
   },
+  define: {
+    'process.env.VERCEL_PROJECT_PRODUCTION_URL': JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL),
+    'process.env.VERCEL_URL': JSON.stringify(process.env.VERCEL_URL),
+    'process.env.VERCEL_ENV': JSON.stringify(process.env.VERCEL_ENV),
+  },
   ssr: {
     /* 
       - On prod build, we want to bundle all libraries.
