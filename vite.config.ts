@@ -16,9 +16,15 @@ export default defineConfig(({ command }) => ({
     },
   },
   define: {
-    'process.env.VERCEL_PROJECT_PRODUCTION_URL': JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL),
-    'process.env.VERCEL_URL': JSON.stringify(process.env.VERCEL_URL),
-    'process.env.VERCEL_ENV': JSON.stringify(process.env.VERCEL_ENV),
+    /*
+      Vercel env variables are only available on the server and at build time,
+      so we need to define them here to make them available on the client.
+    */
+    __vercel: JSON.stringify({
+      /* On prod, use the project production url, on dev, use the deployment url */
+      url: process.env.VERCEL_ENV === 'production' ? process.env.VERCEL_PROJECT_PRODUCTION_URL : process.env.VERCEL_URL,
+      env: process.env.VERCEL_ENV,
+    }),
   },
   ssr: {
     /* 

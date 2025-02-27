@@ -6,15 +6,7 @@ export const isClient = typeof window !== 'undefined'
 
 export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 
-if (isClient) {
-  console.log('import.meta.env', import.meta.env)
-  console.log('process.env.VERCEL_PROJECT_PRODUCTION_URL', process.env.VERCEL_PROJECT_PRODUCTION_URL)
-  console.log('process.env.VERCEL_URL', process.env.VERCEL_URL)
-}
-
-export const SITE_URL = prependProtocol(
-  process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL || process.env.VITE_VERCEL_URL || import.meta.env.VITE_SITE_URL
-)
+export const SITE_URL = prependProtocol(__vercel.url || import.meta.env.VITE_SITE_URL)
 
 if (!SITE_URL) {
   throw new Error('VITE_SITE_URL is not set')
