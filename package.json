@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
+    "start": "node ./.scripts/start.cjs",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint -c ./eslint.config.mjs . --fix --no-cache",
     "build:analyze": "cross-env ANALYZE=true npm run build && node ./.scripts/open-analyze.cjs"
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@eslint/js": "^9.18.0",
     "@react-router/dev": "^7.1.1",
+    "@react-router/serve": "^7.2.0",
     "@types/express": "^5.0.0",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
