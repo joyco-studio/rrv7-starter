@@ -15,6 +15,10 @@ export default defineConfig(({ command }) => ({
       plugins: [tailwindcss, autoprefixer],
     },
   },
+  define: {
+    'import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': JSON.stringify(process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL),
+    'import.meta.env.VITE_VERCEL_URL': JSON.stringify(process.env.VITE_VERCEL_URL),
+  },
   ssr: {
     /* 
       - On prod build, we want to bundle all libraries.
