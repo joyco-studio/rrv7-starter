@@ -1,4 +1,4 @@
-import { prependProtocol } from '../utils'
+import { prependProtocol } from '@/lib/utils'
 
 export const isServer = typeof window === 'undefined'
 
@@ -6,14 +6,14 @@ export const isClient = typeof window !== 'undefined'
 
 export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 
-const base_url =
+const SITE_URL = prependProtocol(
   import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VITE_VERCEL_URL || import.meta.env.VITE_SITE_URL
+)
 
-if (!base_url) {
-  throw new Error('SITE_URL is not set')
+if (!SITE_URL) {
+  throw new Error('VITE_SITE_URL is not set')
 }
 
-export const SITE_URL = prependProtocol(base_url)
 export const WATERMARK = `             
              .;5####57..                        
             .5#########;.                       
