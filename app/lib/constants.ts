@@ -6,7 +6,7 @@ export const isClient = typeof window !== 'undefined'
 
 export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 
-const SITE_URL = prependProtocol(
+export const SITE_URL = prependProtocol(
   import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VITE_VERCEL_URL || import.meta.env.VITE_SITE_URL
 )
 
