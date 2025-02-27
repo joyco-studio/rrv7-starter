@@ -6,6 +6,10 @@ export const isClient = typeof window !== 'undefined'
 
 export const isDevelopment = import.meta.env.NODE_ENV === 'development'
 
+if (isClient) {
+  console.log('import.meta.env', import.meta.env)
+}
+
 export const SITE_URL = prependProtocol(
   import.meta.env.VERCEL_PROJECT_PRODUCTION_URL || import.meta.env.VERCEL_URL || import.meta.env.VITE_SITE_URL
 )
