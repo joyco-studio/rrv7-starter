@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 
 import { useGSAP } from '@gsap/react'
-import { isClient } from '@/utils/constants'
+import { isClient } from '@/lib/constants'
 
 if (isClient) {
   gsap.registerPlugin(useGSAP)

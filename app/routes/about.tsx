@@ -1,5 +1,5 @@
 import cn from '@/lib/utils/cn'
-import { SITE_URL } from '@/lib/utils/constants'
+import { SITE_URL } from '@/lib/constants'
 import { generateMeta, mergeMeta } from '@/lib/utils/meta'
 import { usePreservedLoaderData } from '@joycostudio/transitions'
 import type { MetaFunction } from 'react-router'
