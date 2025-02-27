@@ -16,8 +16,10 @@ export default defineConfig(({ command }) => ({
     },
   },
   define: {
-    'import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': process.env.VERCEL_PROJECT_PRODUCTION_URL,
-    'import.meta.env.VITE_VERCEL_URL': process.env.VERCEL_URL,
+    'import.meta.env': {
+      VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
+      VERCEL_URL: process.env.VERCEL_URL,
+    },
   },
   ssr: {
     /* 
