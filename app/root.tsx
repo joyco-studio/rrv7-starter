@@ -8,18 +8,18 @@ import {
   useOutlet,
   type MetaFunction,
 } from 'react-router'
+import gsap from 'gsap'
 
 import type { Route } from './+types/root'
 import stylesheet from './app.css?url'
 import { RouteTransitionManager } from '@joycostudio/transitions'
 import routes from './routes'
-import { promisifyGsap } from './lib/gsap'
-import gsap from 'gsap'
-import { Header } from './components/header'
-import Footer from './components/footer'
-import { SITE_URL, WATERMARK } from './lib/utils/constants'
-import { generateMeta } from './lib/utils/meta'
-import { generateLinks } from './lib/utils/links'
+import { promisifyGsap } from '@/lib/gsap'
+import { Header } from '@/components/header'
+import Footer from '@/components/footer'
+import { SITE_URL, WATERMARK } from '@/lib/constants'
+import { generateMeta } from '@/lib/utils/meta'
+import { generateLinks } from '@/lib/utils/links'
 
 export const links: Route.LinksFunction = () =>
   generateLinks({
