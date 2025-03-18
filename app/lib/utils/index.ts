@@ -1,4 +1,4 @@
-export const noop = () => { }
+export const noop = () => {}
 
 export const prependProtocol = (url: string | undefined) => {
   if (!url) return undefined
