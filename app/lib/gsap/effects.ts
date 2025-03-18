@@ -26,6 +26,7 @@ const clipIn: GSAPEffect<{
   duration?: number
   stagger?: number
   ease?: string
+  delay?: number
 }> = {
   effect: (node, config) => {
     const log = logger('clipIn')
@@ -62,13 +63,15 @@ const clipIn: GSAPEffect<{
       stagger: config?.stagger,
       duration: config?.duration,
       ease: config?.ease,
+      delay: config?.delay,
     })
   },
   defaults: {
     direction: 'down',
     duration: 0.5,
     stagger: 0.05,
-    ease: 'sharpRise',
+    ease: 'expo.out',
+    delay: 0,
   },
   extendTimeline: true,
 }
@@ -81,6 +84,7 @@ const clipOut: GSAPEffect<{
   duration?: number
   stagger?: number
   ease?: string
+  delay?: number
 }> = {
   effect: (node, config) => {
     const log = logger('clipOut')
@@ -113,13 +117,15 @@ const clipOut: GSAPEffect<{
       stagger: config?.stagger,
       duration: config?.duration,
       ease: config?.ease,
+      delay: config?.delay,
     })
   },
   defaults: {
     direction: 'down',
     duration: 0.5,
     stagger: 0.05,
-    ease: 'sharpRise',
+    ease: 'expo.out',
+    delay: 0,
   },
   extendTimeline: true,
 }
