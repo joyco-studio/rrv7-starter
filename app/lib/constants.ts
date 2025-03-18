@@ -4,9 +4,9 @@ export const isServer = typeof window === 'undefined'
 
 export const isClient = typeof window !== 'undefined'
 
-export const isDevelopment = __vercel.env === 'development'
+export const isDevelopment = __vercel.env === 'development' || import.meta.env.NODE_ENV === 'development'
 
-export const isProduction = __vercel.env === 'production'
+export const isProduction = __vercel.env === 'production' || import.meta.env.NODE_ENV === 'production'
 
 export const SITE_URL = prependProtocol(__vercel.url || import.meta.env.VITE_SITE_URL)
 
