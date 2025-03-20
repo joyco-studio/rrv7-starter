@@ -27,7 +27,7 @@ export const logger = (ctx: string, enabled = true) => {
 }
 
 export const useLogger = (ctx: string, enabled = true) => {
-  const _logger = useMemo(() => logger(ctx), [ctx])
+  const _logger = useMemo(() => logger(ctx, enabled), [ctx])
 
   useEffect(() => {
     if (enabled) {
